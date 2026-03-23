@@ -20,6 +20,8 @@ The skills cover common workflows. The MCP docs server covers everything else.
 - `create-call` — Outbound call initiation
 - `create-contact` — Contact management
 - `list-voices` — Voice discovery
+- `create-simulation` — Simulation test suites
+- `create-eval` — Custom evaluations
 
 ## Configuration
 

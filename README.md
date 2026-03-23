@@ -81,6 +81,8 @@ claude mcp add synthflow-docs -- npx -y mcp-remote https://docs.synthflow.ai/_mc
 | [create-call](./create-call) | Initiate outbound phone calls through AI agents |
 | [create-contact](./create-contact) | Create and manage contacts for call campaigns |
 | [list-voices](./list-voices) | Browse available voices for your workspace |
+| [create-simulation](./create-simulation) | Create and run simulation test suites to evaluate agent behavior |
+| [create-eval](./create-eval) | Define custom evaluations to score call quality and outcomes |
 
 ## Configuration
 

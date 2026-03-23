@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "synthflow-voice-ai",
-      "description": "Complete skill set for building AI voice agents with Synthflow — create assistants, make calls, manage contacts, and discover voices",
+      "description": "Complete skill set for building AI voice agents with Synthflow — create assistants, make calls, manage contacts, discover voices, run simulations, and define custom evaluations",
       "source": "./",
       "strict": false,
       "skills": [
@@ -19,7 +19,9 @@
         "./create-assistant",
         "./create-call",
         "./create-contact",
-        "./list-voices"
+        "./list-voices",
+        "./create-simulation",
+        "./create-eval"
       ]
     }
   ]
