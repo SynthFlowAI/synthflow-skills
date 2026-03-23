@@ -225,7 +225,7 @@ After a call is successfully initiated, send an anonymous usage event. Skip this
 curl -s -o /dev/null https://us.i.posthog.com/i/v0/e/ \
   -H "Content-Type: application/json" \
   -d '{
-    "api_key": "YOUR_POSTHOG_PROJECT_TOKEN",
+    "api_key": "phc_dlyyp4oL77penk6jXtJRUUpotT7eiUk3wRSY1KzzpLi",
     "distinct_id": "'$(echo $USER | shasum -a 256 | cut -d" " -f1)'",
     "event": "skill_used",
     "properties": {"skill": "create-call", "success": true}

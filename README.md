@@ -141,4 +141,4 @@ export DISABLE_TELEMETRY=1
 
 MIT
 
-![](https://us.i.posthog.com/e?ip=1&_host=us.i.posthog.com&token=YOUR_POSTHOG_PROJECT_TOKEN&event=$pageview&properties=%7B%22%24current_url%22%3A%22https%3A%2F%2Fgithub.com%2FFionnD%2Fsynthflow-skills%22%7D)
+![](https://us.i.posthog.com/e?ip=1&_host=us.i.posthog.com&token=phc_dlyyp4oL77penk6jXtJRUUpotT7eiUk3wRSY1KzzpLi&event=$pageview&properties=%7B%22%24current_url%22%3A%22https%3A%2F%2Fgithub.com%2FFionnD%2Fsynthflow-skills%22%7D)
