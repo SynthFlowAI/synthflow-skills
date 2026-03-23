@@ -1,6 +1,6 @@
 ---
 name: synthflow-voice-ai
-description: Build and manage Synthflow AI voice agents — create assistants, make calls, manage contacts, and discover voices. Use when the user needs to interact with the Synthflow API for voice AI workflows.
+description: Build and manage Synthflow AI voice agents — create assistants, manage actions, make calls, run simulations, and define evaluations. Use when the user needs to interact with the Synthflow API for voice AI workflows.
 license: MIT
 compatibility: Requires internet access and a Synthflow API key (SYNTHFLOW_API_KEY).
 metadata:
@@ -10,7 +10,7 @@ metadata:
 
 # Synthflow Voice AI
 
-Create and manage AI voice agents using the Synthflow platform. This skill covers the full workflow: API key setup, assistant creation, making calls, contact management, and voice discovery.
+Create and manage AI voice agents using the Synthflow platform. This skill covers the full workflow: API key setup, assistant creation, action management, making calls, simulations, and evaluations.
 
 ## API Configuration
 
@@ -222,61 +222,89 @@ List filters: `call_status`, `from_date`, `to_date` (YYYY-MM-DD or epoch ms), `d
 
 ---
 
-## Manage Contacts
+## Actions
 
-### Create a Contact
+Actions define what assistants do during and after calls. Attach them via the `actions` array.
+
+### Action Types
+
+| Type | Description |
+|------|-------------|
+| `LIVE_TRANSFER` | Transfer calls to a human agent |
+| `SEND_SMS` | Send SMS messages |
+| `CUSTOM_ACTION` | Call external APIs/webhooks |
+| `INFORMATION_EXTRACTOR` | Extract structured data from conversations |
+| `REAL_TIME_BOOKING` | Book appointments in real time |
+| `CUSTOM_EVAL` | Evaluate call quality post-call |
+
+### Attach actions to an assistant
 
 ```bash
-curl -X POST https://api.synthflow.ai/v2/contacts \
+curl -X PUT https://api.synthflow.ai/v2/assistants/{model_id} \
   -H "Authorization: Bearer $SYNTHFLOW_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "John Doe",
-    "phone_number": "+11234567890",
-    "email": "john@example.com",
-    "contact_metadata": {"company": "Acme Corp", "role": "VP Sales"}
+    "actions": [
+      {
+        "type": "LIVE_TRANSFER",
+        "name": "Transfer to Manager",
+        "LIVE_TRANSFER": {
+          "phone": "+11234567890",
+          "instructions": "When the user asks for a manager",
+          "initiating_msg": "Let me connect you now.",
+          "transfer_mode": "warm_transfer"
+        }
+      },
+      {
+        "type": "SEND_SMS",
+        "name": "Send Confirmation",
+        "SEND_SMS": {
+          "content": "Thanks for calling! Reference: {{ref}}",
+          "instructions": "Send after the customer confirms booking"
+        }
+      },
+      {
+        "type": "CUSTOM_ACTION",
+        "name": "Look Up Order",
+        "CUSTOM_ACTION": {
+          "http_mode": "GET",
+          "url": "https://api.example.com/orders",
+          "name": "lookup_order",
+          "description": "Look up an order by ID",
+          "speech_while_using_the_tool": "Let me look that up.",
+          "variables_during_the_call": [
+            {"name": "order_id", "description": "Order ID", "example": "ORD-12345", "type": "string"}
+          ]
+        }
+      },
+      {
+        "type": "INFORMATION_EXTRACTOR",
+        "name": "Extract Department",
+        "INFORMATION_EXTRACTOR": {
+          "SINGLE_CHOICE": {
+            "identifier": "department",
+            "description": "Which department?",
+            "choices": ["Sales", "Support", "Billing"]
+          }
+        }
+      },
+      {
+        "type": "CUSTOM_EVAL",
+        "name": "Resolution Check",
+        "CUSTOM_EVAL": {
+          "question": {
+            "identifier": "resolved",
+            "text": "Was the issue resolved?",
+            "category": "pass_fail",
+            "expected_result": "true"
+          }
+        }
+      }
+    ]
   }'
 ```
 
-### Contact Fields
-
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | Yes | Full name |
-| `phone_number` | Yes | Phone number (E.164) |
-| `email` | No | Email address |
-| `contact_metadata` | No | JSON object with custom fields |
-
-### Manage Contacts
-
-```bash
-# List (with optional search by phone)
-curl "https://api.synthflow.ai/v2/contacts?limit=20" -H "Authorization: Bearer $SYNTHFLOW_API_KEY"
-
-# Get
-curl https://api.synthflow.ai/v2/contacts/{contact_id} -H "Authorization: Bearer $SYNTHFLOW_API_KEY"
-
-# Update (only supplied fields change)
-curl -X PATCH https://api.synthflow.ai/v2/contacts/{contact_id} \
-  -H "Authorization: Bearer $SYNTHFLOW_API_KEY" -H "Content-Type: application/json" \
-  -d '{"email": "new@example.com"}'
-
-# Delete
-curl -X DELETE https://api.synthflow.ai/v2/contacts/{contact_id} -H "Authorization: Bearer $SYNTHFLOW_API_KEY"
-```
-
----
-
-## List Voices
-
-Find available voice IDs for your workspace:
-
-```bash
-curl "https://api.synthflow.ai/v2/voices?workspace=your-workspace-id" \
-  -H "Authorization: Bearer $SYNTHFLOW_API_KEY"
-```
-
-Returns `voice_id`, `name`, and `preview` for each voice. Use the `voice_id` when creating assistants.
+Remove all actions: `{"actions": []}`. See the `manage-actions` skill for full details on each type.
 
 ---
 
@@ -369,4 +397,4 @@ curl -s -o /dev/null https://us.i.posthog.com/i/v0/e/ \
   }'
 ```
 
-Replace `<skill-name>` with: `setup-api-key`, `create-assistant`, `create-call`, `create-contact`, or `list-voices`.
+Replace `<skill-name>` with: `setup-api-key`, `create-assistant`, `create-call`, `manage-actions`, `create-simulation`, or `create-eval`.
