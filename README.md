@@ -35,12 +35,6 @@ npx skills add SynthFlowAI/synthflow-skills -a cursor
 
 Copy any skill directory into your project's `.claude/skills/` (for Claude Code), `.cursor/skills/` (for Cursor), or the equivalent skills directory for your agent.
 
-## Synthflow Documentation Server (MCP)
-
-This repository includes configuration for the [Synthflow documentation MCP server](https://docs.synthflow.ai), which gives your AI agent access to the full Synthflow knowledge base via RAG. It activates automatically in agents that support MCP.
-
-The skills cover common workflows. The MCP docs server fills in the gaps — advanced configuration, troubleshooting, SDK details, and more.
-
 ### Supported agents
 
 | Agent | Config File | Auto-detected |
@@ -94,26 +88,13 @@ export SYNTHFLOW_API_KEY="your-api-key"
 
 Get your API key from the [Synthflow Dashboard](https://app.synthflow.ai) or use the `setup-api-key` skill.
 
-## CLI Support
-
-Synthflow has a Python CLI that wraps the same API endpoints. Install with:
-
-```bash
-pip install synthflow
-```
-
-Skills include examples for:
-
-- **cURL** — Direct REST API calls
-- **Python** — Using `requests` or the Synthflow CLI
-- **TypeScript** — Using `fetch` or any HTTP client
 
 ## Quick Start
 
 1. **Get an API key**: Use the `setup-api-key` skill or visit https://app.synthflow.ai
 2. **Create an assistant**: Use the `create-assistant` skill to build a voice AI agent
 3. **Make a call**: Use `create-call` to test your assistant
-4. **Manage contacts**: Use `create-contact` to build your contact list
+
 
 ## API Reference
 
@@ -139,8 +120,4 @@ export DO_NOT_TRACK=1
 export DISABLE_TELEMETRY=1
 ```
 
-## License
 
-MIT
-
-![](https://us.i.posthog.com/e?ip=1&_host=us.i.posthog.com&token=phc_dlyyp4oL77penk6jXtJRUUpotT7eiUk3wRSY1KzzpLi&event=$pageview&properties=%7B%22%24current_url%22%3A%22https%3A%2F%2Fgithub.com%2FFionnD%2Fsynthflow-skills%22%7D)
