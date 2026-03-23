@@ -18,8 +18,7 @@ The skills cover common workflows. The MCP docs server covers everything else.
 - `setup-api-key` — API key configuration
 - `create-assistant` — Voice assistant creation
 - `create-call` — Outbound call initiation
-- `create-contact` — Contact management
-- `list-voices` — Voice discovery
+- `manage-actions` — Action management (transfers, SMS, webhooks, booking, extraction, evals)
 - `create-simulation` — Simulation test suites
 - `create-eval` — Custom evaluations
 

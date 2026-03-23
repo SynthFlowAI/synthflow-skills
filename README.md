@@ -73,8 +73,7 @@ claude mcp add synthflow-docs -- npx -y mcp-remote https://docs.synthflow.ai/_mc
 | [setup-api-key](./setup-api-key) | Guide through obtaining and configuring a Synthflow API key |
 | [create-assistant](./create-assistant) | Create AI voice assistants with LLMs, voices, prompts, and advanced settings |
 | [create-call](./create-call) | Initiate outbound phone calls through AI agents |
-| [create-contact](./create-contact) | Create and manage contacts for call campaigns |
-| [list-voices](./list-voices) | Browse available voices for your workspace |
+| [manage-actions](./manage-actions) | Create, update, and attach actions — transfers, SMS, webhooks, booking, extraction, evals |
 | [create-simulation](./create-simulation) | Create and run simulation test suites to evaluate agent behavior |
 | [create-eval](./create-eval) | Define custom evaluations to score call quality and outcomes |
 
@@ -93,7 +92,8 @@ Get your API key from the [Synthflow Dashboard](https://app.synthflow.ai) or use
 
 1. **Get an API key**: Use the `setup-api-key` skill or visit https://app.synthflow.ai
 2. **Create an assistant**: Use the `create-assistant` skill to build a voice AI agent
-3. **Make a call**: Use `create-call` to test your assistant
+3. **Add actions**: Use `manage-actions` to add transfers, SMS, webhooks, and more
+4. **Make a call**: Use `create-call` to test your assistant
 
 
 ## API Reference
