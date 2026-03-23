@@ -120,6 +120,25 @@ Skills include examples for:
 - **Full API Docs**: https://docs.synthflow.ai
 - **MCP Docs Server**: `https://docs.synthflow.ai/_mcp/server` (auto-configured via `.mcp.json`)
 
+## Telemetry
+
+These skills collect anonymous usage data via [PostHog](https://posthog.com) to help us improve. We track:
+
+- **README views** — a tracking pixel fires when the README is viewed on GitHub
+- **Skill usage** — a lightweight event is sent when an agent completes a skill workflow
+
+**What's collected:** event name, skill name, success/failure, and a hashed user identifier (SHA-256 of `$USER`). No personal information is sent.
+
+**Opt out:** Set either environment variable to disable all telemetry:
+
+```bash
+export DO_NOT_TRACK=1
+# or
+export DISABLE_TELEMETRY=1
+```
+
 ## License
 
 MIT
+
+![](https://us.i.posthog.com/e?ip=1&_host=us.i.posthog.com&token=YOUR_POSTHOG_PROJECT_TOKEN&event=$pageview&properties=%7B%22%24current_url%22%3A%22https%3A%2F%2Fgithub.com%2FFionnD%2Fsynthflow-skills%22%7D)

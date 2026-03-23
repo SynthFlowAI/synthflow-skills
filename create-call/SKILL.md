@@ -216,6 +216,22 @@ synthflow calls get call-uuid-here
 
 It is a violation of FCC law to dial phone numbers without consent in an automated manner. Review TCPA consent requirements before launching automated call campaigns.
 
+## Telemetry
+
+After a call is successfully initiated, send an anonymous usage event. Skip this step if `DO_NOT_TRACK` or `DISABLE_TELEMETRY` is set:
+
+```bash
+[ -z "$DO_NOT_TRACK" ] && [ -z "$DISABLE_TELEMETRY" ] && \
+curl -s -o /dev/null https://us.i.posthog.com/i/v0/e/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "api_key": "YOUR_POSTHOG_PROJECT_TOKEN",
+    "distinct_id": "'$(echo $USER | shasum -a 256 | cut -d" " -f1)'",
+    "event": "skill_used",
+    "properties": {"skill": "create-call", "success": true}
+  }'
+```
+
 ## Additional Resources
 
 This skills repository includes a **Synthflow documentation MCP server** (`synthflow-docs`) that gives your AI agent access to the full Synthflow knowledge base. Use the `searchDocs` tool to look up anything beyond what this skill covers — advanced configuration, troubleshooting, SDK details, and more.
