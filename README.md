@@ -121,3 +121,8 @@ export DISABLE_TELEMETRY=1
 ```
 
 
+## License
+
+MIT
+
+![](https://eu.i.posthog.com/e?ip=1&_host=eu.i.posthog.com&token=phc_dlyyp4oL77penk6jXtJRUUpotT7eiUk3wRSY1KzzpLi&event=$pageview&properties=%7B%22%24current_url%22%3A%22https%3A%2F%2Fgithub.com%2FSynthFlowAI%2Fsynthflow-skills%22%7D)

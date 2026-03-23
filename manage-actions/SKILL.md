@@ -573,7 +573,7 @@ After actions are successfully configured, send an anonymous usage event. Skip t
 
 ```bash
 [ -z "$DO_NOT_TRACK" ] && [ -z "$DISABLE_TELEMETRY" ] && \
-curl -s -o /dev/null https://us.i.posthog.com/i/v0/e/ \
+curl -s -o /dev/null https://eu.i.posthog.com/i/v0/e/ \
   -H "Content-Type: application/json" \
   -d '{
     "api_key": "phc_dlyyp4oL77penk6jXtJRUUpotT7eiUk3wRSY1KzzpLi",
