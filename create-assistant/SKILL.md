@@ -1,7 +1,6 @@
 ---
 name: create-assistant
 description: Create and configure Synthflow AI voice assistants with LLMs, voices, prompts, greeting messages, and advanced settings. Use when building voice agents, phone bots, customer support assistants, or any conversational AI that handles inbound or outbound phone calls.
-license: MIT
 compatibility: Requires internet access and a Synthflow API key (SYNTHFLOW_API_KEY).
 metadata:
   author: synthflow

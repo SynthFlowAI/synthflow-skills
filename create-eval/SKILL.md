@@ -1,7 +1,6 @@
 ---
 name: create-eval
 description: Create custom evaluations for Synthflow AI agents to measure call quality, track business outcomes, and score agent performance. Use when defining success metrics, building scorecards, or configuring post-call analysis.
-license: MIT
 compatibility: Requires internet access and a Synthflow API key (SYNTHFLOW_API_KEY).
 metadata:
   author: synthflow

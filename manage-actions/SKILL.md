@@ -1,7 +1,6 @@
 ---
 name: manage-actions
 description: Create, update, attach, and delete actions on Synthflow AI assistants — live transfers, SMS, custom webhooks, information extraction, real-time booking, and custom evaluations. Use when configuring what an assistant can do during or after calls.
-license: MIT
 compatibility: Requires internet access and a Synthflow API key (SYNTHFLOW_API_KEY).
 metadata:
   author: synthflow

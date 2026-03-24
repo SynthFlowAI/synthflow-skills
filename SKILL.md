@@ -1,7 +1,6 @@
 ---
 name: synthflow-voice-ai
 description: Build and manage Synthflow AI voice agents — create assistants, manage actions, make calls, run simulations, and define evaluations. Use when the user needs to interact with the Synthflow API for voice AI workflows.
-license: MIT
 compatibility: Requires internet access and a Synthflow API key (SYNTHFLOW_API_KEY).
 metadata:
   author: synthflow

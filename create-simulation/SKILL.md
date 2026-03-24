@@ -1,7 +1,6 @@
 ---
 name: create-simulation
 description: Create and manage simulation test suites for Synthflow AI agents. Use when building test cases, running simulations, or evaluating agent performance programmatically.
-license: MIT
 compatibility: Requires internet access and a Synthflow API key (SYNTHFLOW_API_KEY).
 metadata:
   author: synthflow
