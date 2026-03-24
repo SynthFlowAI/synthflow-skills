@@ -1,7 +1,6 @@
 ---
 name: setup-api-key
 description: Guide users through obtaining and configuring a Synthflow API key. Use when the user needs to set up Synthflow, when API calls fail due to missing keys, or when the user mentions needing access to Synthflow's voice AI platform.
-license: MIT
 compatibility: Requires internet access to synthflow.ai and api.synthflow.ai.
 metadata:
   author: synthflow

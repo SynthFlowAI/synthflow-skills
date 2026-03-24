@@ -1,7 +1,6 @@
 ---
 name: create-call
 description: Initiate outbound phone calls through Synthflow AI agents. Use when making automated calls, testing voice assistants, or launching call campaigns programmatically.
-license: MIT
 compatibility: Requires internet access and a Synthflow API key (SYNTHFLOW_API_KEY).
 metadata:
   author: synthflow
